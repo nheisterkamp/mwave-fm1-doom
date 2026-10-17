@@ -1,0 +1,4 @@
+# A 32-bit x86 Linux to build the host test harness in: pointers as on the FM-1, so the zone figures
+# (-stats) match the device's.   docker build --platform linux/386 -t fm1doom-i386 -f host/Dockerfile.i386 host
+FROM i386/debian:bookworm-slim
+RUN apt-get update -qq && apt-get install -y -qq gcc make zlib1g-dev python3 && rm -rf /var/lib/apt/lists/*

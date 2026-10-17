@@ -1,0 +1,19 @@
+# E1M1 from the start: walk forward, look around, shoot, use the first door
+10 down up
+80 up up
+85 down right
+100 up right
+105 down up
+140 up up
+145 down fire
+150 up fire
+160 down use
+165 up use
+170 down left
+200 up left
+210 down up
+260 up up
+270 turn 300
+280 turn -600
+300 down fire
+330 up fire
