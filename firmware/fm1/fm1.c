@@ -73,9 +73,12 @@ extern uint32_t _pool_start[], _pool_end[], _rt_start[], _rt_end[], _rt_load[], 
 extern uint8_t _zone_start[], _zone_end[];
 extern const uint8_t dpk_part_a[];   /* dpk_a.S: part a of the image, linked in */
 
-/* survives resets: the boot-loop guard, and a request for the data mode from the running game */
+/* survives resets: the boot-loop guard, and a request for the data mode from the running game. Not static
+ * (as fm1_irq.h fm1_crash): .noinit holds whatever the last run or power-on left, and a file-local object lets
+ * the compiler assume its zero start and only the values written, shrinking the magic to a flag byte and
+ * keeping random power-on RAM as a valid record (a first build went to UBOOT at every power-on) */
 #define BOOTGUARD_MAGIC 0x44424754u  /* "DBGT" */
-static struct { uint32_t magic, pending, failed, data_mode; } bootguard __attribute__((section(".noinit")));
+struct { uint32_t magic, pending, failed, data_mode; } bootguard __attribute__((section(".noinit")));
 
 static uint8_t flash_ok;             /* the expected 1 MiB part answered at boot */
 static volatile uint32_t audio_gain = 160;   /* 0..256, from MASTER */
