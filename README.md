@@ -9,11 +9,10 @@ The hardware layer, boot code, update loader and USB stack come from [Felucca](h
 the open firmware for the FM-1 that this project learned the hardware from. The engine is
 [doomgeneric](https://github.com/ozkl/doomgeneric) (Chocolate Doom), cut down to fit.
 
-> **Status: built and tested on a computer, not yet run on an FM-1.** Everything that can run off the device has
-> been run: the engine on a 32-bit build with exactly the FM-1's memory, long random play sessions, the
-> shareware demos, the upload against the firmware's own code. The hardware code follows Felucca's, which runs
-> on FM-1s, but this firmware's first run on one is its first test. Installing firmware is at your own risk;
-> see [Getting back](#getting-back).
+> **Status: runs on an FM-1.** Installed from Felucca, game data uploaded, E1M1 played on the device. Off the
+> device it is also tested on a 32-bit build with exactly the FM-1's memory (long random play sessions), with
+> the shareware demos, and with the upload against the firmware's own code. Installing firmware is at your own
+> risk; see [Getting back](#getting-back).
 
 ## What fits, and how
 
